@@ -16,7 +16,7 @@ public class Main {
     }
 
     public static void printIsLeapYear(int year) {
-        if (year > 1584 && (year % 4 == 0 || year % 100 != 0 && year % 400 == 0)) {
+        if (year % 4 == 0 || year % 100 != 0 && year % 400 == 0) {
             System.out.printf("%s год является високосным", year);
         } else {
             System.out.printf("%s год не является високосным", year);
@@ -28,11 +28,11 @@ public class Main {
         if (type == 0 && year < currentYear) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else if (type == 0 && year >= currentYear) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
+            System.out.println("Установите обычную версию приложения для iOS по ссылке");
         } else if (type == 1 && year < currentYear) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         } else if (type == 1 && year >= currentYear) {
-            System.out.println("Установите версию приложения для Android по ссылке");
+            System.out.println("Установите обычную версию приложения для Android по ссылке");
         } else {
             System.out.println("Такого приложения нет");
         }
