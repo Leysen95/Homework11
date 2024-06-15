@@ -12,11 +12,11 @@ public class Main {
         System.out.println();
 
         System.out.println("Task 3");
-        calculateDistanceDays(95);
+        printDeliveryDays(95);
     }
 
     public static void printIsLeapYear(int year) {
-        if (year % 4 == 0 || year % 100 != 0 && year % 400 == 0) {
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
             System.out.printf("%s год является високосным", year);
         } else {
             System.out.printf("%s год не является високосным", year);
@@ -42,16 +42,22 @@ public class Main {
     public static int calculateDistanceDays(int deliveryDistance) {
         int deliveryDays = 1;
         if (deliveryDistance < 20) {
-            System.out.println("Потребуется дней:" + deliveryDays);
+            return 1;
         } else if (deliveryDistance < 60) {
-            deliveryDays++;
-            System.out.println("Потребуется дней:" + deliveryDays);
+            return 2;
         } else if (deliveryDistance < 100) {
-            deliveryDays += 2;
+            return 3;
+        } else {
+            return -1;
+        }
+    }
+
+    public static void printDeliveryDays(int deliveryDistance) {
+        int deliveryDays = calculateDistanceDays(deliveryDistance);
+        if (deliveryDays > 0) {
             System.out.println("Потребуется дней:" + deliveryDays);
         } else {
-            System.out.println("Доставки нет");
+            System.out.println("Доставки не осуществляется");
         }
-        return deliveryDays;
     }
 }
