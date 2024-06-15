@@ -25,13 +25,14 @@ public class Main {
 
     public static void printValidTypeInfo(int type, int year) {
         int currentYear = LocalDate.now().getYear();
-        if (type == 0 && year < 2015) {
+        int transitionalYear = 2015;
+        if (type == 0 && year < transitionalYear) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (type == 0 && year >= 2015) {
+        } else if (type == 0 && year >= transitionalYear) {
             System.out.println("Установите обычную версию приложения для iOS по ссылке");
-        } else if (type == 1 && year < 2015) {
+        } else if (type == 1 && year < transitionalYear) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (type == 1 && year >= 2015) {
+        } else if (type == 1 && year >= transitionalYear) {
             System.out.println("Установите обычную версию приложения для Android по ссылке");
         } else {
             System.out.println("Такого приложения нет");
